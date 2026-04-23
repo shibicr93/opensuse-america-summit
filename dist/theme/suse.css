@@ -1,0 +1,465 @@
+/**
+ * SUSE/openSUSE Theme for Reveal.js
+ * Based on openSUSE Brand Guidelines
+ */
+
+/* Import SUSE Google Font */
+@import url('https://fonts.googleapis.com/css2?family=SUSE:ital,wght@0,100..900;1,100..900&display=swap');
+
+/*********************************************
+ * GLOBAL STYLES
+ *********************************************/
+
+:root {
+  /* SUSE Brand Colors */
+  --suse-green: #30BA78;
+  --suse-green-dark: #0C322C;
+  --suse-green-light: #7FD6A4;
+  --suse-teal: #0C322C;
+  --suse-white: #FFFFFF;
+  --suse-light-grey: #F5F5F5;
+  --suse-mid-grey: #8E9089;
+  --suse-dark-grey: #333333;
+  --suse-black: #1A1A1A;
+  
+  /* Accent Colors */
+  --suse-blue: #0077B6;
+  --suse-purple: #7724FF;
+  --suse-orange: #FF6B35;
+  --suse-red: #E63946;
+  
+  /* Typography */
+  --suse-font: "SUSE", sans-serif;
+  --r-main-font: var(--suse-font);
+  --r-heading-font: var(--suse-font);
+  --r-code-font: "Fira Code", "Consolas", "Monaco", monospace;
+  
+  /* Base sizes */
+  --r-main-font-size: 40px;
+  --r-heading1-size: 2.5em;
+  --r-heading2-size: 1.6em;
+  --r-heading3-size: 1.3em;
+  --r-heading4-size: 1.0em;
+}
+
+.reveal-viewport {
+  background: url('../../assets/images/background.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.reveal {
+  font-family: var(--suse-font);
+  font-size: var(--r-main-font-size);
+  font-weight: 400;
+  color: var(--suse-white);
+  font-optical-sizing: auto;
+}
+
+.reveal ::selection {
+  color: var(--suse-white);
+  background: var(--suse-green);
+  text-shadow: none;
+}
+
+.reveal ::-moz-selection {
+  color: var(--suse-white);
+  background: var(--suse-green);
+  text-shadow: none;
+}
+
+/*********************************************
+ * HEADERS
+ *********************************************/
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  margin: 0 0 20px 0;
+  color: var(--suse-white);
+  font-family: var(--suse-font);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  text-transform: none;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+  word-wrap: break-word;
+}
+
+.reveal h1 {
+  font-size: var(--r-heading1-size);
+  text-shadow: none;
+}
+
+.reveal h2 {
+  font-size: var(--r-heading2-size);
+}
+
+.reveal h3 {
+  font-size: var(--r-heading3-size);
+}
+
+.reveal h4 {
+  font-size: var(--r-heading4-size);
+}
+
+/*********************************************
+ * OTHER
+ *********************************************/
+
+.reveal p {
+  margin: 20px 0;
+  line-height: 1.4;
+  color: var(--suse-white);
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Remove trailing margins after titles */
+.reveal h1:last-child,
+.reveal h2:last-child,
+.reveal h3:last-child,
+.reveal h4:last-child,
+.reveal h5:last-child,
+.reveal h6:last-child {
+  margin-bottom: 0;
+}
+
+/* Ensure certain elements are never larger than the slide itself */
+.reveal img,
+.reveal video,
+.reveal iframe {
+  max-width: 95%;
+  max-height: 95%;
+}
+
+.reveal strong,
+.reveal b {
+  font-weight: 700;
+}
+
+.reveal em {
+  font-style: italic;
+}
+
+.reveal ol,
+.reveal dl,
+.reveal ul {
+  display: inline-block;
+  text-align: left;
+  margin: 0 0 0 1em;
+  color: var(--suse-white);
+}
+
+.reveal ol {
+  list-style-type: decimal;
+}
+
+.reveal ul {
+  list-style-type: disc;
+}
+
+.reveal ul ul {
+  list-style-type: square;
+}
+
+.reveal ul ul ul {
+  list-style-type: circle;
+}
+
+.reveal ul ul,
+.reveal ul ol,
+.reveal ol ol,
+.reveal ol ul {
+  display: block;
+  margin-left: 40px;
+}
+
+.reveal dt {
+  font-weight: 700;
+}
+
+.reveal dd {
+  margin-left: 40px;
+}
+
+.reveal blockquote {
+  display: block;
+  position: relative;
+  width: 70%;
+  margin: 20px auto;
+  padding: 5px;
+  font-style: italic;
+  background: rgba(48, 186, 120, 0.1);
+  border-left: 4px solid var(--suse-green);
+}
+
+.reveal blockquote p:first-child,
+.reveal blockquote p:last-child {
+  display: inline-block;
+}
+
+.reveal q {
+  font-style: italic;
+}
+
+.reveal pre {
+  display: block;
+  position: relative;
+  width: 90%;
+  margin: 20px auto;
+  text-align: left;
+  font-size: 0.55em;
+  font-family: var(--r-code-font);
+  line-height: 1.2em;
+  word-wrap: break-word;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.reveal code {
+  font-family: var(--r-code-font);
+  text-transform: none;
+  tab-size: 2;
+}
+
+.reveal pre code {
+  display: block;
+  padding: 16px;
+  overflow: auto;
+  max-height: 400px;
+  word-wrap: normal;
+  background: var(--suse-teal);
+  color: var(--suse-white);
+  border-radius: 6px;
+}
+
+.reveal .code-wrapper {
+  white-space: normal;
+}
+
+.reveal .code-wrapper code {
+  white-space: pre;
+}
+
+.reveal table {
+  margin: auto;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.reveal table th {
+  font-weight: 700;
+  background: var(--suse-green);
+  color: var(--suse-white);
+}
+
+.reveal table th,
+.reveal table td {
+  text-align: left;
+  padding: 0.2em 0.5em 0.2em 0.5em;
+  border-bottom: 1px solid;
+}
+
+.reveal table th[align=center],
+.reveal table td[align=center] {
+  text-align: center;
+}
+
+.reveal table th[align=right],
+.reveal table td[align=right] {
+  text-align: right;
+}
+
+.reveal table tbody tr:last-child th,
+.reveal table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.reveal sup {
+  vertical-align: super;
+  font-size: smaller;
+}
+
+.reveal sub {
+  vertical-align: sub;
+  font-size: smaller;
+}
+
+.reveal small {
+  display: inline-block;
+  font-size: 0.6em;
+  line-height: 1.2em;
+  vertical-align: top;
+}
+
+.reveal small * {
+  vertical-align: top;
+}
+
+.reveal img {
+  margin: 20px 0;
+}
+
+/*********************************************
+ * LINKS
+ *********************************************/
+
+.reveal a {
+  color: var(--suse-white);
+  text-decoration: underline;
+  transition: color 0.15s ease;
+}
+
+.reveal a:hover {
+  color: var(--suse-green-light);
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+  border: none;
+}
+
+.reveal .roll span:after {
+  color: var(--suse-white);
+  background: var(--suse-green-dark);
+}
+
+/*********************************************
+ * Frame helper
+ *********************************************/
+
+.reveal .r-frame {
+  border: 4px solid var(--suse-dark-grey);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.reveal a .r-frame {
+  transition: all 0.15s linear;
+}
+
+.reveal a:hover .r-frame {
+  border-color: var(--suse-green);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.55);
+}
+
+/*********************************************
+ * NAVIGATION CONTROLS
+ *********************************************/
+
+.reveal .controls {
+  color: var(--suse-green);
+}
+
+/*********************************************
+ * PROGRESS BAR
+ *********************************************/
+
+.reveal .progress {
+  background: rgba(0, 0, 0, 0.2);
+  color: var(--suse-green);
+}
+
+/*********************************************
+ * PRINT BACKGROUND
+ *********************************************/
+
+@media print {
+  .backgrounds {
+    background-color: var(--suse-white);
+  }
+}
+
+/*********************************************
+ * SLIDE TYPES
+ *********************************************/
+
+/* Title Slide */
+.reveal .title-slide {
+  text-align: center;
+}
+
+.reveal .title-slide h1 {
+  color: var(--suse-white);
+  font-size: 1.8em;
+  line-height: 1.2;
+  margin-top: 40px;
+}
+
+.reveal .title-slide p {
+  color: var(--suse-white);
+}
+
+/* Content Slide */
+.reveal .content-slide {
+  text-align: left;
+}
+
+.reveal .content-slide h2 {
+  color: var(--suse-white);
+  border-bottom: 3px solid var(--suse-white);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+/*********************************************
+ * SUSE SPECIFIC UTILITIES
+ *********************************************/
+
+/* SUSE Font Class (from Google Fonts) */
+.suse-presentation {
+  font-family: "SUSE", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+/* Accent colors as classes */
+.reveal .green {
+  color: var(--suse-green);
+}
+
+.reveal .teal {
+  color: var(--suse-teal);
+}
+
+.reveal .blue {
+  color: var(--suse-blue);
+}
+
+.reveal .purple {
+  color: var(--suse-purple);
+}
+
+.reveal .orange {
+  color: var(--suse-orange);
+}
+
+.reveal .red {
+  color: var(--suse-red);
+}
+
+/* Background slide for SUSE green */
+.reveal section[data-background-color="#30BA78"] h1,
+.reveal section[data-background-color="#30BA78"] h2,
+.reveal section[data-background-color="#30BA78"] h3,
+.reveal section[data-background-color="#30BA78"] p,
+.reveal section[data-background-color="#30BA78"] li {
+  color: var(--suse-white);
+}
+
+/* Background slide for SUSE teal */
+.reveal section[data-background-color="#0C322C"] h1,
+.reveal section[data-background-color="#0C322C"] h2,
+.reveal section[data-background-color="#0C322C"] h3,
+.reveal section[data-background-color="#0C322C"] p,
+.reveal section[data-background-color="#0C322C"] li {
+  color: var(--suse-white);
+}
+
+/*********************************************
+ * SPEAKER NOTES
+ *********************************************/
+
+.reveal aside.notes {
+  font-family: var(--suse-font);
+}
